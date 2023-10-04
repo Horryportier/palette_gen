@@ -1,36 +1,44 @@
 local C = {}
 
 local function read_file(path)
-    local file = io.open(path, "rb") -- r read mode and b binary mode
-    if not file then return nil end
-    local content = file:read "*a" -- *a or *all reads the whole file
-    file:close()
-    return content
+	local file = io.open(path, "rb") -- r read mode and b binary mode
+	if not file then return nil end
+	local content = file:read "*a"   -- *a or *all reads the whole file
+	file:close()
+	return content
 end
-local safe_file=os.getenv("PALETTE_SAVE_FILE")
+local safe_file = os.getenv("PALETTE_SAVE_FILE")
 if safe_file == nil then safe_file = "palette.txt" end
 local file = read_file(safe_file)
 
 function Split(s, delimiter)
-    local result = {};
-    for match in (s..delimiter):gmatch("(.-)"..delimiter) do
-        table.insert(result, match);
-    end
-    return result;
+	local result = {};
+	for match in (s .. delimiter):gmatch("(.-)" .. delimiter) do
+		table.insert(result, match);
+	end
+	return result;
 end
 
 local splited = Split(file, "\n")
-	local color1=splited[1]
-	local color2=splited[2]
-	local color3=splited[3]
-	local color4=splited[4]
-	local color5=splited[5]
-	local color6=splited[6]
-	local color7=splited[7]
-	local color8=splited[8]
+local color1 = splited[1]
+local color2 = splited[2]
+local color3 = splited[3]
+local color4 = splited[4]
+local color5 = splited[5]
+local color6 = splited[6]
+local color7 = splited[7]
+local color8 = splited[8]
 
 
 C = {
+	color1 = color1,
+	color2 = color2,
+	color3 = color3,
+	color4 = color4,
+	color5 = color5,
+	color6 = color6,
+	color7 = color7,
+	color8 = color8,
 	colors = {
 		-- The default text color
 		foreground = color7,
