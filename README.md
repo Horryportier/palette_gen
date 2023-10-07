@@ -3,6 +3,7 @@
 
 This tool generates color palette of 8 (by default) colors in hex format. 
 To see avalible implementations see [impls.md](https://github.com/Horryportier/palette_gen/blob/main/impls/impls.md)
+
 <img src="https://raw.githubusercontent.com/Horryportier/palette_gen/main/example.png" width="500" height="300">
 # Ho to use it 
 Give it path to image and optional safe path if safe path is not provided it will try to read [PALETTE_SAVE_FILE] env variable.
